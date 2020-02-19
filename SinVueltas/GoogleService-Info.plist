@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>26715839175-imjsec2v55aqdav7agu7sj8m01uitkjl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.26715839175-imjsec2v55aqdav7agu7sj8m01uitkjl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDjY5tRjK5DxXYyMUGSzEg4plI4nOYMSQA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>26715839175</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.diplomado4G.SinVueltas</string>
+	<key>PROJECT_ID</key>
+	<string>sinvueltas-c02ae</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sinvueltas-c02ae.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:26715839175:ios:b9bf759a6f0b5ce8d9bce2</string>
+	<key>DATABASE_URL</key>
+	<string>https://sinvueltas-c02ae.firebaseio.com</string>
+</dict>
+</plist>
