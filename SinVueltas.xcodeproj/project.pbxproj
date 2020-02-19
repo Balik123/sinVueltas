@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0B863B23FD07FA0047AD20 /* filtrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B863A23FD07FA0047AD20 /* filtrosViewController.swift */; };
+		0C0B863E23FD0B7A0047AD20 /* filtrosAplicar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B863D23FD0B7A0047AD20 /* filtrosAplicar.swift */; };
 		0C22449823E4EFDB00F1F1E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22449723E4EFDB00F1F1E0 /* AppDelegate.swift */; };
 		0C22449A23E4EFDB00F1F1E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22449923E4EFDB00F1F1E0 /* SceneDelegate.swift */; };
 		0C22449F23E4EFDB00F1F1E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C22449D23E4EFDB00F1F1E0 /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C0B863A23FD07FA0047AD20 /* filtrosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filtrosViewController.swift; sourceTree = "<group>"; };
+		0C0B863D23FD0B7A0047AD20 /* filtrosAplicar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filtrosAplicar.swift; sourceTree = "<group>"; };
 		0C22449423E4EFDB00F1F1E0 /* SinVueltas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinVueltas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C22449723E4EFDB00F1F1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C22449923E4EFDB00F1F1E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0B863C23FD0B580047AD20 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0C0B863D23FD0B7A0047AD20 /* filtrosAplicar.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		0C22448B23E4EFDB00F1F1E0 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +152,7 @@
 		0C22449623E4EFDB00F1F1E0 /* SinVueltas */ = {
 			isa = PBXGroup;
 			children = (
+				0C0B863C23FD0B580047AD20 /* model */,
 				0C37323F23FBC41A0093411C /* utilidades */,
 				0C50746123E756700082B247 /* ViewController */,
 				0CF7B47A23E52E5D007C83E7 /* View */,
@@ -188,6 +201,7 @@
 				0C50746223E756BD0082B247 /* confirmarCitaViewController.swift */,
 				0C50746823E790160082B247 /* usuarioViewController.swift */,
 				0C35729A23E91D2F00F350CF /* verMasPropiAVisitarViewController.swift */,
+				0C0B863A23FD07FA0047AD20 /* filtrosViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -525,6 +539,8 @@
 				0C50746523E776280082B247 /* crearUsuarios.swift in Sources */,
 				0C50746723E77EBE0082B247 /* idDevice.swift in Sources */,
 				0CF7B48023E543E7007C83E7 /* listaPropiedadesViewController.swift in Sources */,
+				0C0B863B23FD07FA0047AD20 /* filtrosViewController.swift in Sources */,
+				0C0B863E23FD0B7A0047AD20 /* filtrosAplicar.swift in Sources */,
 				0C37324123FBC42D0093411C /* gradientes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
