@@ -465,6 +465,11 @@
                                                 <action selector="filtrosBackToSerch:" destination="rgq-92-317" id="Bds-Hz-5NL"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Borrar Filtros" id="Q6Z-27-0r9">
+                                            <connections>
+                                                <action selector="borrarFiltros:" destination="rgq-92-317" id="zFZ-Yf-4lc"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

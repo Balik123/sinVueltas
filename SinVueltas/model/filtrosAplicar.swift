@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct filtrosAplicar {
+struct filtrosAplicar: Codable{
     var tipoOperacion: String
     var tipoPropiedad: String
     var habitaciones: Int

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C0B863B23FD07FA0047AD20 /* filtrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B863A23FD07FA0047AD20 /* filtrosViewController.swift */; };
 		0C0B863E23FD0B7A0047AD20 /* filtrosAplicar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B863D23FD0B7A0047AD20 /* filtrosAplicar.swift */; };
+		0C0B864223FE708F0047AD20 /* userDefCoda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B864123FE708F0047AD20 /* userDefCoda.swift */; };
 		0C22449823E4EFDB00F1F1E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22449723E4EFDB00F1F1E0 /* AppDelegate.swift */; };
 		0C22449A23E4EFDB00F1F1E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22449923E4EFDB00F1F1E0 /* SceneDelegate.swift */; };
 		0C22449F23E4EFDB00F1F1E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C22449D23E4EFDB00F1F1E0 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		0C0B863A23FD07FA0047AD20 /* filtrosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filtrosViewController.swift; sourceTree = "<group>"; };
 		0C0B863D23FD0B7A0047AD20 /* filtrosAplicar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filtrosAplicar.swift; sourceTree = "<group>"; };
+		0C0B864123FE708F0047AD20 /* userDefCoda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDefCoda.swift; sourceTree = "<group>"; };
 		0C22449423E4EFDB00F1F1E0 /* SinVueltas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinVueltas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C22449723E4EFDB00F1F1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C22449923E4EFDB00F1F1E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				0C37324023FBC42D0093411C /* gradientes.swift */,
 				0C37324223FBCFF40093411C /* RoundButton.swift */,
+				0C0B864123FE708F0047AD20 /* userDefCoda.swift */,
 			);
 			path = utilidades;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				0C50746323E756BD0082B247 /* confirmarCitaViewController.swift in Sources */,
 				0CF7B48223E54A61007C83E7 /* celdaPropiedadesTableViewCell.swift in Sources */,
 				0C50746B23E7A1EF0082B247 /* celdaUsuarioTableViewCell.swift in Sources */,
+				0C0B864223FE708F0047AD20 /* userDefCoda.swift in Sources */,
 				0C35729B23E91D2F00F350CF /* verMasPropiAVisitarViewController.swift in Sources */,
 				0C50746523E776280082B247 /* crearUsuarios.swift in Sources */,
 				0C50746723E77EBE0082B247 /* idDevice.swift in Sources */,

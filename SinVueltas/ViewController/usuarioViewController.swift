@@ -176,6 +176,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     func getDatosUsuario() {
         
         var propiedadesAVisitar: [String] = []
+        //agregar id de dispositivo
         db.collection("Usuarios").whereField("id_Usuario", isEqualTo: "7856450342074890904:31C3CC5E-2BEF-452C-A6F8-25E97259C626")
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
