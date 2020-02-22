@@ -53,6 +53,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>Privacy – Location Always Usage Description</key>
+	<string>Para una mejor experiencia necesitamos saber en donde se encuentra tu propiedad, nos lo permitirias?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Para una mejor experiencia necesitamos saber en donde se encuentra tu propiedad, nos lo permitirias?</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

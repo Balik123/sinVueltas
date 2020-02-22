@@ -77,8 +77,6 @@ class listaPropiedadesViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "verMas"{
             let indexPath = tableView.indexPathForSelectedRow
@@ -87,10 +85,6 @@ class listaPropiedadesViewController: UIViewController, UITableViewDelegate, UIT
             verMas?.datosPropiedad = propiedadesVal[(indexPath?.row)!]
         }
     }
-    
-    
-    
-    
    
     
     
