@@ -36,6 +36,7 @@ class datosUsuarioViewController: UIViewController, UITableViewDelegate, UITable
      override func viewWillAppear(_ animated: Bool) {
            storageReference = Storage.storage().reference()
            getPropiedades()
+        
            
        }
     
@@ -120,7 +121,7 @@ class datosUsuarioViewController: UIViewController, UITableViewDelegate, UITable
     func getDatosUsuario(){
         var propSelecUsuario: [String] = []
         
-        db.collection("Usuarios").whereField("id_Usuario", isEqualTo: "-8637166607307151511:3FC94005-54E2-41D8-90EE-672AB6EF85BD")
+        db.collection("Usuarios").whereField("id_Usuario", isEqualTo: "-8938262307736497869:D0B92A6C-9BF2-460A-922E-A617C1E3A6BC")
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")

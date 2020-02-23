@@ -127,7 +127,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Filtros" style="plain" id="ghG-20-XTa">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <segue destination="rgq-92-317" kind="show" id="zHo-db-yH5"/>
+                                                <segue destination="rgq-92-317" kind="presentation" id="2JK-X5-bu7"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -155,6 +155,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Buscar" image="doc.text.magnifyingglass" catalog="system" selectedImage="doc.text.magnifyingglass" id="smi-ed-1uz"/>
                     <connections>
+                        <outlet property="btnSigConfirmarCita" destination="Q93-F2-WJx" id="aP6-0R-Uz3"/>
                         <outlet property="tableView" destination="jGc-A7-kDN" id="Z3E-xI-QVY"/>
                     </connections>
                 </viewController>
@@ -205,8 +206,8 @@
                                     <action selector="confirmarCita:" destination="nAW-id-ezW" eventType="touchUpInside" id="BXq-4l-T5I"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seleccione una fecha para su visita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-Vy-XkG">
-                                <rect key="frame" x="73" y="91" width="268" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seleccione una fecha para su visita" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-Vy-XkG">
+                                <rect key="frame" x="20" y="79" width="374" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -256,8 +257,13 @@
                     <navigationItem key="navigationItem" id="N1S-Y1-vqU"/>
                     <connections>
                         <outlet property="fechaVisita" destination="2yL-8g-qwE" id="GjP-uN-AjF"/>
+                        <outlet property="nombreTL" destination="bHo-al-EBi" id="2pV-j3-Q6e"/>
                         <outlet property="nombreUsuario" destination="6sW-XN-f30" id="h1X-ks-oBz"/>
+                        <outlet property="subTitulo" destination="0Ic-rk-Qgn" id="PFq-Bq-eVM"/>
+                        <outlet property="telTL" destination="cHA-Qo-BnZ" id="yQx-ev-mSi"/>
                         <outlet property="telefonoUsuario" destination="Cx1-ht-GDP" id="lzI-3Q-JfK"/>
+                        <outlet property="tituloBtnConfirmar" destination="nYP-XJ-Mau" id="c53-HB-LCa"/>
+                        <outlet property="tituloTL" destination="JH8-Vy-XkG" id="ocT-GC-hhz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPS-FQ-TPo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -436,9 +442,11 @@
                         <outlet property="precioVerMas" destination="9Mo-W9-Bx3" id="Z0x-Jb-R7E"/>
                         <outlet property="tipoOperVerMas" destination="Feb-D9-cjB" id="MUw-A4-bzr"/>
                         <outlet property="tipoPropVerMas" destination="csd-Gb-rzx" id="eV5-PB-DkP"/>
+                        <segue destination="7Xg-2N-Mzb" kind="unwind" identifier="updateProp" unwindAction="unwindToViewControllerAWithSegue:" id="wrf-Z2-Ofx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrU-mI-eRf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="7Xg-2N-Mzb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2195.6521739130435" y="851.78571428571422"/>
         </scene>
@@ -465,7 +473,7 @@
                                                 <action selector="filtrosBackToSerch:" destination="rgq-92-317" id="Bds-Hz-5NL"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Borrar Filtros" id="Q6Z-27-0r9">
+                                        <barButtonItem key="rightBarButtonItem" title="Borrar Filtros   " id="Q6Z-27-0r9">
                                             <connections>
                                                 <action selector="borrarFiltros:" destination="rgq-92-317" id="zFZ-Yf-4lc"/>
                                             </connections>
@@ -623,9 +631,11 @@
                         <outlet property="precioTextLabel" destination="bpc-V7-2Vo" id="AZd-mW-a8U"/>
                         <outlet property="tipoOperacion" destination="6Ly-uc-Cy5" id="jyv-IM-BcO"/>
                         <outlet property="tipoPropiedad" destination="a7u-p3-gAM" id="pVd-lS-zdW"/>
+                        <segue destination="rzd-SC-82w" kind="unwind" identifier="updateFiltros" unwindAction="unwindToViewControllerAWithSegue:" id="Suu-RQ-rWw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wth-7d-LdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rzd-SC-82w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2195.6521739130435" y="-609.375"/>
         </scene>
@@ -1231,7 +1241,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l20-XQ-ZF8">
-                                <rect key="frame" x="171" y="593" width="414" height="751"/>
+                                <rect key="frame" x="0.0" y="57" width="414" height="751"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cargado Inmueble" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4u-6e-M0t">

@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import FirebaseFirestore
 import FirebaseCore
+import FirebaseStorage
 
 
 class confirmarCitaViewController: UIViewController {
@@ -18,20 +19,51 @@ class confirmarCitaViewController: UIViewController {
     @IBOutlet weak var telefonoUsuario: UITextField!
     @IBOutlet weak var fechaVisita: UIDatePicker!
     
+    @IBOutlet weak var tituloTL: UILabel!
+    @IBOutlet weak var tituloBtnConfirmar: UIButton!
+    @IBOutlet weak var telTL: UILabel!
+    @IBOutlet weak var nombreTL: UILabel!
+    @IBOutlet weak var subTitulo: UILabel!
+    
+    
+    var db = Firestore.firestore()
+    var storageReference: StorageReference!
+       
+    
     
     let fechaHoy = Date()
     var components = DateComponents()
     let defaults = UserDefaults.standard
+    var validado: Bool = false
+    var idUser: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        storageReference = Storage.storage().reference()
         components.setValue(2, for: .day)
         let fechaMinima = Calendar.current.date(byAdding: components, to: fechaHoy)
         fechaVisita.minimumDate = fechaMinima
         
+        verificarRegistro()
+        
+    
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if validado == true{
+            tituloTL.adjustsFontSizeToFitWidth = true
+            tituloTL.lineBreakMode = .byWordWrapping
+            tituloTL.text = "Al agregar nuevas porpiedades, tu fecha de visita puede cambiar!"
+            subTitulo.isHidden = true
+            nombreTL.isHidden = true
+            telTL.isHidden = true
+            telefonoUsuario.isHidden = true
+            nombreUsuario.isHidden = true
+            tituloBtnConfirmar.setTitle("Cambiar Fecha", for: .normal)
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -53,6 +85,8 @@ class confirmarCitaViewController: UIViewController {
     
     @IBAction func confirmarCita(_ sender: Any) {
         
+        if validado == false {
+            
         //ESTO PUEDE SER UNA CLASE
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
@@ -104,6 +138,51 @@ class confirmarCitaViewController: UIViewController {
         
         
         }
+        }else{
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = DateFormatter.Style.short
+            dateFormatter.timeStyle = DateFormatter.Style.short
+            let fechaFinalVisita = dateFormatter.string(from: fechaVisita.date)
+            let washingtonRef = db.collection("Usuarios").document(idUser)
+
+            washingtonRef.updateData([
+                "fecha_De_Visita": fechaFinalVisita
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    let alert = UIAlertController(title: "FELICIDADES!!!", message: "Tu cita esta confirmada, en unos minutos uno de nuestros Asesores se pondra en contacto contigo 😊", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default , handler: { action in
+                           self.dismiss(animated: true, completion: nil)
+                        }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            
+        }
+        
+        
+    }
+    
+    
+    func verificarRegistro(){
+        
+        db.collection("Usuarios").whereField("id_Usuario", isEqualTo: "-8938262307736497869:D0B92A6C-9BF2-460A-922E-A617C1E3A6BC")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        self.validado = true
+                        self.idUser = document.documentID
+                        
+                    }
+                }
+                self.viewWillAppear(true)
+        }
+        
     }
 
     

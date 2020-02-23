@@ -55,8 +55,9 @@ class verMasViewController: UIViewController {
         garageVerMas.text = String(datosPropiedad.garages)
         amuebladoVerMas.text = datosPropiedad.amueblado
         direccionVerMas.text = datosPropiedad.direccion
+        precioVerMas.text = String(datosPropiedad.precio)
         
-        var arrProps = self.defaults.stringArray(forKey: "PropiedadesArray") ?? [String]()
+        let arrProps = self.defaults.stringArray(forKey: "PropiedadesArray") ?? [String]()
         for elementosPropiedades in arrProps{
             if datosPropiedad.id_Propiedad == elementosPropiedades{
                 btnQuieroVisitar.isEnabled = false
@@ -79,18 +80,14 @@ class verMasViewController: UIViewController {
         }
         
         imgPropVerMAs?.sd_setImage(with: userImageRef)
-        
-        
-        
-        
+        self.performSegue(withIdentifier: "updateProp", sender: self)
         
     }
     
     
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//    }
-//
+    override func viewWillDisappear(_ animated: Bool) {
+        self.performSegue(withIdentifier: "updateProp", sender: self)
+    }
 
     /*
     // MARK: - Navigation
@@ -104,6 +101,7 @@ class verMasViewController: UIViewController {
     
     
     @IBAction func backVerMas(_ sender: Any) {
+        self.performSegue(withIdentifier: "updateProp", sender: self)
         dismiss(animated: true, completion: nil)
     }
     
@@ -129,6 +127,7 @@ class verMasViewController: UIViewController {
             arrProps.append(idPropiedad)
             defaults.set(arrProps, forKey: "PropiedadesArray")
         }
+        self.performSegue(withIdentifier: "updateProp", sender: self)
         dismiss(animated: true, completion: nil)
         
     }

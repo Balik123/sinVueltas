@@ -13,13 +13,14 @@ import FirebaseStorage
 import FirebaseUI
 
 class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+        
     var dicColonias: [String] = []
     var db = Firestore.firestore()
     var ref: DocumentReference!
     var getRef: Firestore!
     var storageReference: StorageReference!
     let defaults = UserDefaults.standard
+    
 
 
     @IBOutlet weak var tipoOperacion: UISegmentedControl!
@@ -52,15 +53,23 @@ class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     garagesStepper.maximumValue = 9
     coloniasSelector.delegate = self
     coloniasSelector.dataSource = self
-        
-    getcolonias()
+    
     validacionDeFiltros()
+    self.performSegue(withIdentifier: "updateFiltros", sender: self)
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         getcolonias()
-        validacionDeFiltros()
+        validacionDeFiltros()        
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+         self.performSegue(withIdentifier: "updateFiltros", sender: self)
     }
     
     
@@ -77,6 +86,7 @@ class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func getcolonias(){
         
+        self.dicColonias.removeAll()
         db.collection("dicColonias").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -136,12 +146,14 @@ class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
              tempAmueblado = "No"
         }
         let tempPrecio = Int(precioTextLabel.text!)!
+        
         let tempColonia = dicColonias[coloniasSelector.selectedRow(inComponent: 0)]
         
         let filtroAAplicar: [filtrosAplicar] = [filtrosAplicar(tipoOperacion: tempTipoOperacion, tipoPropiedad: tempTipoPropiedad, habitaciones: tempHabitaciones, banos: tempBanos, garages: tempGarages, amueblado: tempAmueblado, precio: tempPrecio, colonia: tempColonia)]
         
         defaults.removeObject(forKey: "filtros")
         defaults.setStructArray(filtroAAplicar, forKey: "filtros")
+        self.performSegue(withIdentifier: "updateFiltros", sender: self)
         dismiss(animated: true, completion: nil)
         
     }
@@ -168,7 +180,7 @@ class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     if(tipoOperacion.selectedSegmentIndex == 0){
         calculatePriceSlider.maximumValue = 50000000
         calculatePriceSlider.minimumValue = 1000000
-        precioTextLabel.text = "1000000"
+        
             let value = calculatePriceSlider.value
             precioTextLabel.text = String(Int(value))
         }
@@ -176,7 +188,7 @@ class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     if(tipoOperacion.selectedSegmentIndex == 1){
         calculatePriceSlider.maximumValue = 100000
         calculatePriceSlider.minimumValue = 10000
-        precioTextLabel.text = "10000"
+        
         
             let value = calculatePriceSlider.value
             precioTextLabel.text = String(Int(value))
@@ -190,9 +202,12 @@ class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     
+    
     @IBAction func filtrosBackToSerch(_ sender: Any) {
+        self.performSegue(withIdentifier: "updateFiltros", sender: self)
         dismiss(animated: true, completion: nil)
     }
+    
     
     func validacionDeFiltros(){
         
@@ -205,26 +220,26 @@ class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             garagesTextLabel.text = String(filtrosAplicados[0].garages)
             garagesStepper.value = Double(filtrosAplicados[0].garages)
             precioTextLabel.text = String(filtrosAplicados[0].precio)
-            guard filtrosAplicados[0].amueblado == "Si" else {
+            
+            if filtrosAplicados[0].amueblado == "Si"{
+                amuebladoSwitch.isOn = true
+            }else{
                 amuebladoSwitch.isOn = false
-                return
             }
-            amuebladoSwitch.isOn = true
-            
-            guard filtrosAplicados[0].tipoOperacion == "Venta" else {
+            if filtrosAplicados[0].tipoOperacion == "Venta" {
+                tipoOperacion.selectedSegmentIndex = 0
+            }else{
                 tipoOperacion.selectedSegmentIndex = 1
-                return
             }
-            tipoOperacion.selectedSegmentIndex = 0
-            
-            guard filtrosAplicados[0].tipoPropiedad == "Casa" else {
+            if filtrosAplicados[0].tipoPropiedad == "Casa"{
+                tipoPropiedad.selectedSegmentIndex = 0
+            }else{
                 tipoPropiedad.selectedSegmentIndex = 1
-                return
             }
-            tipoPropiedad.selectedSegmentIndex = 0
             
         }
         
+            
         else{
             habitacionesTextLabel.text = "1"
             banosTextLabel.text = "1"
@@ -237,8 +252,10 @@ class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     
+    
     @IBAction func borrarFiltros(_ sender: Any) {
         defaults.removeObject(forKey: "filtros")
+        self.performSegue(withIdentifier: "updateFiltros", sender: self)
         dismiss(animated: true, completion: nil)
     }
     

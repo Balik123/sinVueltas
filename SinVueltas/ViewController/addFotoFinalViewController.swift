@@ -184,6 +184,5 @@ class addFotoFinalViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     
-    
 
 }
