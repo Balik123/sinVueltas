@@ -71,9 +71,8 @@ class confirmarCitaViewController: UIViewController {
             //ESTO PODRIA SER UNA CLASE
             let datosAGuardar = datosUsuarios(idUsuario: UIDevice.identifier, nombreUsuario: userName, telefonoUsuario: userPhone, propiedadesAVisitar: arrProps, fechaVisita: fechaFinalVisita)
             let db = Firestore.firestore()
-            var Ref: DocumentReference? = nil
             
-            Ref = db.collection("Usuarios").addDocument(data: [
+            db.collection("Usuarios").addDocument(data: [
                 "id_Usuario": datosAGuardar.idUsuario,
                 "nombre": datosAGuardar.nombreUsuario,
                 "telefono": datosAGuardar.telefonoUsuario,

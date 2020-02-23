@@ -13,17 +13,22 @@ import MobileCoreServices
 import FirebaseFirestore
 import FirebaseStorage
 import FirebaseCore
-import CoreLocation
 
 
-class addFotoFinalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate{
+class addFotoFinalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     let db = Firestore.firestore()
     var idPropiedad: String = ""
     var datosFinales: agregarPropiedades!
-   let locationManager = CLLocationManager()
-    
+    var indicador: String = ""
+    let defaults = UserDefaults.standard
+
+    let activityIndicator = UIActivityIndicatorView.init(style: .large)
+        
+    @IBOutlet weak var superficieTF: UITextField!
+    @IBOutlet weak var calleTF: UITextField!
     @IBOutlet weak var impProp: UIImageView!
+    @IBOutlet weak var vistaIndicador: UIView!
     
     var ref: DocumentReference!
     var getRef: Firestore!
@@ -35,82 +40,16 @@ class addFotoFinalViewController: UIViewController, UIImagePickerControllerDeleg
         getRef = Firestore.firestore()
         
         idPropiedad = db.collection("propiedades").document().documentID
-        locationManager.delegate = self
         
+        view.addSubview(activityIndicator)
+        activityIndicator.frame = view.bounds
+        activityIndicator.color = .white
+        vistaIndicador.isHidden = true
         
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        
-        let location = CLLocation(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
-    
-       CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
-
-           guard let placemark = placemarks?.first else {
-               let errorString = error?.localizedDescription ?? "Unexpected Error"
-               print("Unable to reverse geocode the given location. Error: \(errorString)")
-               return
-           }
-
-           let reversedGeoLocation = ReversedGeoLocation(with: placemark)
-           print(reversedGeoLocation.formattedAddress)
-        
-       }
+      
     }
     
-    
-    struct ReversedGeoLocation {
-        let name: String
-        let streetName: String
-        let streetNumber: String
-        let city: String
-        let state: String
-        let zipCode: String
-        let country: String
-        let isoCountryCode: String
-
-        var formattedAddress: String {
-            return """
-            \(name),
-            \(streetNumber) \(streetName),
-            \(city), \(state) \(zipCode)
-            \(country)
-            """
-        }
-
-        init(with placemark: CLPlacemark) {
-            self.name           = placemark.name ?? ""
-            self.streetName     = placemark.thoroughfare ?? ""
-            self.streetNumber   = placemark.subThoroughfare ?? ""
-            self.city           = placemark.locality ?? ""
-            self.state          = placemark.administrativeArea ?? ""
-            self.zipCode        = placemark.postalCode ?? ""
-            self.country        = placemark.country ?? ""
-            self.isoCountryCode = placemark.isoCountryCode ?? ""
-        }
-    }
-
-    
-   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-           let location = locations[locations.count - 1]
-           if location.horizontalAccuracy > 0 {
-            locationManager.stopUpdatingLocation()
-            let Longitude = location.coordinate.longitude
-            let latitude = location.coordinate.latitude
-            let speed = location.speed
-            let floor = location.floor
-            let timeStamp = location.timestamp
-            let courseDirection = location.course
-            let hightFromSeaLevel = location.altitude
-           }
-       }
-    
-       func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            print(error)
-       }
-    
-
+        
     
     /*
     // MARK: - Navigation
@@ -151,11 +90,10 @@ class addFotoFinalViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     func uploadImage(imageData: Data){
-        
+        self.vistaIndicador.isHidden = false
+        self.activityIndicator.startAnimating()
         let storageReference = Storage.storage().reference()
-        
         let userImageRef = storageReference.child("/fotosProps").child( "\(idPropiedad).jpg")
-        
         let uploadMetadata = StorageMetadata()
         
         uploadMetadata.contentType = "image/jpeg"
@@ -168,35 +106,40 @@ class addFotoFinalViewController: UIViewController, UIImagePickerControllerDeleg
             if let error = error{
                 print(error.localizedDescription)
             }else{
-                print("metadata:", StorageMetadata?.path)
+                self.activityIndicator.removeFromSuperview()
+                self.vistaIndicador.isHidden = true
+                self.defaults.set(self.idPropiedad, forKey: "misPropSubidas")
+                self.dismiss(animated: true, completion: nil)
             }
-            
-            
-            
+
         }
-        
+    
     }
+    
     
 
     
     @IBAction func agregarPropiedad(_ sender: UIButton) {
         
-        print(idPropiedad)
-        let nombreProp = "\(datosFinales.tipoPropiedad ) en \(datosFinales.tipoOperacion) en \(datosFinales.colonia)"
+        
+        if superficieTF.text != "" && impProp.image != nil  {
+
+        let direccion:String = "\(datosFinales.colonia),\(calleTF.text ?? "")"
+        let nombreProp:String = "\(datosFinales.tipoPropiedad ) en \(datosFinales.tipoOperacion) en \(datosFinales.colonia)"
         
         uploadImage(imageData: optimizedImage)
         
-        db.collection("propiedades").addDocument(data: [
+        db.collection("propiedades").document(idPropiedad).setData([
             
             "amueblado": datosFinales.amueblado,
             "banos": datosFinales.banos,
             "colonia": datosFinales.colonia,
-            //"dirs"
+            "dirs": direccion,
             "garages": datosFinales.garages,
             "habitaciones":datosFinales.habitaciones,
             "nombre": nombreProp,
             "precio": datosFinales.precio,
-            //"superficie":
+            "superficie": superficieTF.text ?? "",
             "tipo_Operacion": datosFinales.tipoOperacion,
             "tipo_propiedad":datosFinales.tipoPropiedad
 
@@ -207,7 +150,40 @@ class addFotoFinalViewController: UIViewController, UIImagePickerControllerDeleg
                     print( "Cargado con exito" )
                 }
             }
+        }
+    
+        else if superficieTF.text != "" && impProp.image == nil{
+            let alert = UIAlertController(title: "Ups!!!", message: "Lo olvidaste, debes cargar una foto 😢", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        else if superficieTF.text == "" && impProp.image != nil{
+            let alert = UIAlertController(title: "Ups!!!", message: "Lo olvidaste, debes llenar la superficie... no sabemos cuanto mide tu casa 😩", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        else{
+            
+            let alert = UIAlertController(title: "Ups!!!", message: "Lo olvidaste, debes llenar todos los campos 😅", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+
     }
+    
+    
+    @IBAction func cancelUploadProp(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     
 
 }

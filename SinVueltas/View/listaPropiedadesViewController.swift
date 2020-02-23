@@ -58,9 +58,8 @@ class listaPropiedadesViewController: UIViewController, UITableViewDelegate, UIT
     userImageRef.downloadURL { (url, error) in
     if let error = error{
         print(error.localizedDescription)
-    }else{
-        print("imagen descargada")
-        }
+    }
+        
     }
     
     cell.nombreProp.text = propiedadesVal[indexPath.row].nombre

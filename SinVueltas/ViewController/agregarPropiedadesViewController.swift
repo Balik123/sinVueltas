@@ -47,6 +47,7 @@ class agregarPropiedadesViewController: UIViewController, UIPickerViewDelegate, 
         garagesSTP.maximumValue = 9
         coloniaPV.delegate = self
         coloniaPV.dataSource = self
+        precioSLID.value = 0
 
         // Do any additional setup after loading the view.
         
@@ -145,10 +146,6 @@ class agregarPropiedadesViewController: UIViewController, UIPickerViewDelegate, 
     }
     
     
-    @IBAction func btnSigAgregar(_ sender: UIButton) {
-        
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -164,9 +161,9 @@ class agregarPropiedadesViewController: UIViewController, UIPickerViewDelegate, 
         }else{
             tempTipoPropiedad = "Departamento"
         }
-        let tempHabitaciones = Int(habitacionesTL.text!)!
-        let tempBanos = Int(banosTL.text!)!
-        let tempGarages = Int(garagesTL.text!)!
+        let tempHabitaciones = Int(habitacionesTL.text ?? "1")!
+        let tempBanos = Int(banosTL.text ?? "1")!
+        let tempGarages = Int(garagesTL.text ?? "1")!
         let tempAmueblado: String
         
         if ambuebladoSW.isOn {
@@ -174,7 +171,7 @@ class agregarPropiedadesViewController: UIViewController, UIPickerViewDelegate, 
         } else {
              tempAmueblado = "No"
         }
-        let tempPrecio = Int(precioTL.text!)!
+        let tempPrecio = Int(precioTL.text ?? "0")!
         let tempColonia = dicColonias[coloniaPV.selectedRow(inComponent: 0)]
         
         let datos: agregarPropiedades = agregarPropiedades(tipoOperacion: tempTipoOperacion, tipoPropiedad: tempTipoPropiedad, habitaciones: tempHabitaciones, banos: tempBanos, garages: tempGarages, amueblado: tempAmueblado, precio: tempPrecio, colonia: tempColonia)
