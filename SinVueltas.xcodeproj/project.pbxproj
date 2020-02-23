@@ -29,6 +29,9 @@
 		0C50746723E77EBE0082B247 /* idDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50746623E77EBE0082B247 /* idDevice.swift */; };
 		0C50746B23E7A1EF0082B247 /* celdaUsuarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50746A23E7A1EF0082B247 /* celdaUsuarioTableViewCell.swift */; };
 		0C95FE112402023800C35ABD /* datosUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95FE102402023800C35ABD /* datosUsuarioViewController.swift */; };
+		0C95FE1724031D1100C35ABD /* misPropiedadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95FE1624031D1100C35ABD /* misPropiedadesViewController.swift */; };
+		0C95FE1924031ECD00C35ABD /* celdaMisPropiedadesUICellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95FE1824031ECD00C35ABD /* celdaMisPropiedadesUICellTableViewCell.swift */; };
+		0C95FE1B2403317A00C35ABD /* verMasMisPropiedadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95FE1A2403317A00C35ABD /* verMasMisPropiedadesViewController.swift */; };
 		0CF7B47C23E52E74007C83E7 /* propiedades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7B47B23E52E74007C83E7 /* propiedades.swift */; };
 		0CF7B48023E543E7007C83E7 /* listaPropiedadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7B47F23E543E7007C83E7 /* listaPropiedadesViewController.swift */; };
 		0CF7B48223E54A61007C83E7 /* celdaPropiedadesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7B48123E54A61007C83E7 /* celdaPropiedadesTableViewCell.swift */; };
@@ -84,6 +87,9 @@
 		0C50746623E77EBE0082B247 /* idDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idDevice.swift; sourceTree = "<group>"; };
 		0C50746A23E7A1EF0082B247 /* celdaUsuarioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celdaUsuarioTableViewCell.swift; sourceTree = "<group>"; };
 		0C95FE102402023800C35ABD /* datosUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datosUsuarioViewController.swift; sourceTree = "<group>"; };
+		0C95FE1624031D1100C35ABD /* misPropiedadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = misPropiedadesViewController.swift; sourceTree = "<group>"; };
+		0C95FE1824031ECD00C35ABD /* celdaMisPropiedadesUICellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celdaMisPropiedadesUICellTableViewCell.swift; sourceTree = "<group>"; };
+		0C95FE1A2403317A00C35ABD /* verMasMisPropiedadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verMasMisPropiedadesViewController.swift; sourceTree = "<group>"; };
 		0CF7B47B23E52E74007C83E7 /* propiedades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = propiedades.swift; sourceTree = "<group>"; };
 		0CF7B47F23E543E7007C83E7 /* listaPropiedadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listaPropiedadesViewController.swift; sourceTree = "<group>"; };
 		0CF7B48123E54A61007C83E7 /* celdaPropiedadesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celdaPropiedadesTableViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +220,8 @@
 				0C0B864323FF9F2B0047AD20 /* agregarPropiedadesViewController.swift */,
 				0C0B864923FFAFBC0047AD20 /* addFotoFinalViewController.swift */,
 				0C95FE102402023800C35ABD /* datosUsuarioViewController.swift */,
+				0C95FE1624031D1100C35ABD /* misPropiedadesViewController.swift */,
+				0C95FE1A2403317A00C35ABD /* verMasMisPropiedadesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 				0CF7B47F23E543E7007C83E7 /* listaPropiedadesViewController.swift */,
 				0CF7B48323E554EE007C83E7 /* verMasViewController.swift */,
 				0C50746A23E7A1EF0082B247 /* celdaUsuarioTableViewCell.swift */,
+				0C95FE1824031ECD00C35ABD /* celdaMisPropiedadesUICellTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -548,11 +557,14 @@
 				0C0B864423FF9F2B0047AD20 /* agregarPropiedadesViewController.swift in Sources */,
 				0CF7B48223E54A61007C83E7 /* celdaPropiedadesTableViewCell.swift in Sources */,
 				0C50746B23E7A1EF0082B247 /* celdaUsuarioTableViewCell.swift in Sources */,
+				0C95FE1924031ECD00C35ABD /* celdaMisPropiedadesUICellTableViewCell.swift in Sources */,
 				0C0B864223FE708F0047AD20 /* userDefCoda.swift in Sources */,
 				0C35729B23E91D2F00F350CF /* verMasPropiAVisitarViewController.swift in Sources */,
+				0C95FE1B2403317A00C35ABD /* verMasMisPropiedadesViewController.swift in Sources */,
 				0C0B864623FF9F820047AD20 /* agregarPropiedades.swift in Sources */,
 				0C50746523E776280082B247 /* crearUsuarios.swift in Sources */,
 				0C50746723E77EBE0082B247 /* idDevice.swift in Sources */,
+				0C95FE1724031D1100C35ABD /* misPropiedadesViewController.swift in Sources */,
 				0CF7B48023E543E7007C83E7 /* listaPropiedadesViewController.swift in Sources */,
 				0C0B863B23FD07FA0047AD20 /* filtrosViewController.swift in Sources */,
 				0C0B863E23FD0B7A0047AD20 /* filtrosAplicar.swift in Sources */,

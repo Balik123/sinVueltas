@@ -108,7 +108,6 @@ class addFotoFinalViewController: UIViewController, UIImagePickerControllerDeleg
             }else{
                 self.activityIndicator.removeFromSuperview()
                 self.vistaIndicador.isHidden = true
-                self.defaults.set(self.idPropiedad, forKey: "misPropSubidas")
                 self.dismiss(animated: true, completion: nil)
             }
 
@@ -148,6 +147,33 @@ class addFotoFinalViewController: UIViewController, UIImagePickerControllerDeleg
                     print("Error adding document: \(err)")
                 } else {
                     print( "Cargado con exito" )
+                    
+                    if self.defaults.array(forKey: "misPropSubidas") == nil{
+                        self.defaults.set([self.idPropiedad], forKey: "misPropSubidas")
+                    }else{
+                        let tempUserDef = self.defaults.array(forKey: "misPropSubidas")!
+                        var tempMisProp:[String] = []
+                        
+                        for tU in tempUserDef{
+                            tempMisProp.append(tU as! String)
+                        }
+                        tempMisProp.append(self.idPropiedad)
+                        self.defaults.removeObject(forKey: "misPropSubidas")
+                        self.defaults.set(tempMisProp, forKey: "misPropSubidas")
+                    }
+                    
+                    
+                    //var tempMisProp = self.defaults.array(forKey: "misPropSubidas") as! [String]
+                    
+                    //print(tempMisProp)
+                    
+                    /*if tempMisProp.isEmpty{
+                        
+                    }else{
+                        print("aqui")
+                        
+                    }*/
+                    
                 }
             }
         }

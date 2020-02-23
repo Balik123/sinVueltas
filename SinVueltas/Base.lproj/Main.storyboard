@@ -687,14 +687,14 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jose de Jesus Olvera Torres" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKT-e0-oDd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aun no haz elegido ninguna propiedad 😢" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKT-e0-oDd">
                                 <rect key="frame" x="20" y="99" width="374" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5531685650" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RS1-43-0Wq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="55555555" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RS1-43-0Wq">
                                 <rect key="frame" x="20" y="152" width="374" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -820,10 +820,10 @@
             </objects>
             <point key="canvasLocation" x="1174" y="2391"/>
         </scene>
-        <!--View Controller-->
+        <!--Mis Propiedades View Controller-->
         <scene sceneID="7ji-ee-zqs">
             <objects>
-                <viewController id="Urt-LH-l42" sceneMemberID="viewController">
+                <viewController id="Urt-LH-l42" customClass="misPropiedadesViewController" customModule="SinVueltas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wMr-TW-ovV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -833,7 +833,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="163" id="RMP-R7-BQN" customClass="celdaUsuarioTableViewCell" customModule="SinVueltas" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="163" id="RMP-R7-BQN" customClass="celdaMisPropiedadesUICellTableViewCell" customModule="SinVueltas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="163"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RMP-R7-BQN" id="XCa-yr-j8o">
@@ -865,34 +865,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgD-KA-BIV">
-                                                    <rect key="frame" x="383" y="87" width="8" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="habitacion" translatesAutoresizingMaskIntoConstraints="NO" id="fF7-Po-Pzp">
                                                     <rect key="frame" x="179" y="82" width="26" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bano" translatesAutoresizingMaskIntoConstraints="NO" id="zVb-ym-Ihy">
-                                                    <rect key="frame" x="271" y="82" width="26" height="26"/>
+                                                    <rect key="frame" x="260" y="81" width="26" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="garage" translatesAutoresizingMaskIntoConstraints="NO" id="4e0-Wg-LaS">
-                                                    <rect key="frame" x="355" y="82" width="26" height="26"/>
+                                                    <rect key="frame" x="341" y="81" width="26" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sR-0U-yEj">
-                                                    <rect key="frame" x="207" y="87" width="8" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sR-0U-yEj">
+                                                    <rect key="frame" x="207" y="87" width="33" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mez-q6-AOY">
-                                                    <rect key="frame" x="294" y="87" width="9" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mez-q6-AOY">
+                                                    <rect key="frame" x="283" y="86" width="26" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -901,35 +894,52 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ver más" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79y-Pk-cbe">
                                                     <rect key="frame" x="239" y="125" width="91" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.60392156860000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.50196078430000002" green="0.019607843140000001" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgD-KA-BIV">
+                                                    <rect key="frame" x="365" y="87" width="29" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="banosPropUsuarioRegistrado" destination="Mez-q6-AOY" id="3tK-Jj-37e"/>
-                                            <outlet property="garagePropUsuarioRegistrado" destination="VgD-KA-BIV" id="2hr-GF-Q7f"/>
-                                            <outlet property="habitacionPropUsuarioRegistrado" destination="5sR-0U-yEj" id="83q-Zz-gjK"/>
-                                            <outlet property="imgPropPorVisitar" destination="eKw-dP-bf6" id="QIZ-yn-I3h"/>
-                                            <outlet property="nombrePropUsuarioRegistrado" destination="Vmy-Be-aX8" id="uaG-qt-i9b"/>
-                                            <outlet property="tipoOperacionPropUsuarioRegistrado" destination="Gdb-Gi-D0s" id="4Oi-6K-rUJ"/>
-                                            <outlet property="tipoPropiedadPropUsuarioRegistrado" destination="C8e-48-xpW" id="9CR-rR-maM"/>
+                                            <outlet property="banos" destination="Mez-q6-AOY" id="NeL-ib-HF8"/>
+                                            <outlet property="garages" destination="VgD-KA-BIV" id="os2-XO-dIg"/>
+                                            <outlet property="habitaciones" destination="5sR-0U-yEj" id="Ew7-24-ktA"/>
+                                            <outlet property="imgProp" destination="eKw-dP-bf6" id="bFw-nn-FhJ"/>
+                                            <outlet property="nombreProp" destination="Vmy-Be-aX8" id="toD-RV-Ump"/>
+                                            <outlet property="tipoProp" destination="C8e-48-xpW" id="cNY-5V-JNt"/>
+                                            <outlet property="tipo_oper" destination="Gdb-Gi-D0s" id="Oaq-mY-lDX"/>
+                                            <segue destination="R7G-dU-csM" kind="show" id="MsV-34-DgY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="AC6-U2-CUf" id="pt7-Fu-7z6"/>
-                                    <outlet property="delegate" destination="AC6-U2-CUf" id="rXA-eO-CgK"/>
+                                    <outlet property="dataSource" destination="Urt-LH-l42" id="ss7-PA-iWa"/>
+                                    <outlet property="delegate" destination="Urt-LH-l42" id="ff0-Oc-0SC"/>
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8k-Di-sdJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.50196078430000002" green="0.019607843140000001" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Sin Vueltas" id="sen-Ht-LNt">
-                                        <barButtonItem key="leftBarButtonItem" title="Regresar" id="rrt-Ks-Nsv"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Regresar" id="rrt-Ks-Nsv">
+                                            <connections>
+                                                <action selector="backPerfil:" destination="Urt-LH-l42" id="jBa-mD-ro5"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -945,6 +955,9 @@
                         <viewLayoutGuide key="safeArea" id="Vh1-vB-dDz"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qlw-PG-WgD"/>
+                    <connections>
+                        <outlet property="tableView" destination="3a0-c6-vg9" id="9Dh-Dd-u9F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX5-jp-lzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1177,6 +1190,7 @@
                                 <rect key="frame" x="122" y="739" width="170" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.23921568630000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
                                 <state key="normal" title="Cargar Propiedad">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1194,14 +1208,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snS-PE-hPH">
-                                <rect key="frame" x="127" y="347" width="161" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snS-PE-hPH" customClass="RoundButton" customModule="SinVueltas" customModuleProvider="target">
+                                <rect key="frame" x="122" y="335" width="170" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" red="1" green="0.0" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.23921568630000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                <color key="tintColor" red="1" green="0.23921568630000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Cargar foto">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="selectImage:" destination="rVq-hO-leQ" eventType="touchUpInside" id="lff-L2-NNv"/>
                                 </connections>
@@ -1430,12 +1450,12 @@
             </objects>
             <point key="canvasLocation" x="1174" y="3242"/>
         </scene>
-        <!--Ver Mas PropiA Visitar View Controller-->
+        <!--Ver Mas Mis Propiedades View Controller-->
         <scene sceneID="8aT-5h-sMG">
             <objects>
-                <viewController id="R7G-dU-csM" customClass="verMasPropiAVisitarViewController" customModule="SinVueltas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="R7G-dU-csM" customClass="verMasMisPropiedadesViewController" customModule="SinVueltas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dxr-gZ-yLe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Twm-va-l5E">
@@ -1449,9 +1469,9 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLI-eM-O6g">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.34901960780000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.23921568630000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="1" green="0.34901960780000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="1" green="0.23921568630000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
@@ -1459,7 +1479,7 @@
                                     <navigationItem title="SinVueltas" id="EY9-IV-G8y">
                                         <barButtonItem key="leftBarButtonItem" title="Atras" id="CFe-91-nRc">
                                             <connections>
-                                                <action selector="back_btn:" destination="R7G-dU-csM" id="02A-HK-yf0"/>
+                                                <action selector="back_btn:" destination="R7G-dU-csM" id="mm7-4i-wrG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1574,16 +1594,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="qgI-Bn-aVr"/>
                     <connections>
-                        <outlet property="amuebladoVerMasPropAVisitar" destination="N7C-MK-Bpg" id="zbz-po-Ahf"/>
-                        <outlet property="banosVerMasPropAVisitar" destination="LvY-gx-Kak" id="Nwl-X1-CmG"/>
-                        <outlet property="direccionVerMasPropAVisitar" destination="Kl9-Bg-phS" id="cvq-Nn-rJu"/>
-                        <outlet property="garageVerMasPropAVisitar" destination="cAo-Qx-B62" id="I7F-Kg-YQq"/>
-                        <outlet property="habitacionesVerMasPropAVisitar" destination="C5m-CZ-9dk" id="3L7-tP-CSA"/>
-                        <outlet property="imgPropVerMAsPropAVisitar" destination="Fz4-fn-wf3" id="9ci-O2-XsI"/>
-                        <outlet property="nombreVerMAsPropAVisitar" destination="f3F-5e-9gV" id="TyS-6a-rST"/>
-                        <outlet property="precioVerMasPropAVisitar" destination="6WV-cb-dKn" id="UUP-gP-bBI"/>
-                        <outlet property="tipoOperVerMasPropAVisitar" destination="puO-uk-PbJ" id="nVD-r4-38x"/>
-                        <outlet property="tipoPropVerMasPropAVisitar" destination="3K9-xa-t3i" id="Lsj-wL-YOC"/>
+                        <outlet property="amuebladoVerMasPropAVisitar" destination="N7C-MK-Bpg" id="j5P-FZ-hbC"/>
+                        <outlet property="banosVerMasPropAVisitar" destination="LvY-gx-Kak" id="iTp-h7-oR1"/>
+                        <outlet property="direccionVerMasPropAVisitar" destination="Kl9-Bg-phS" id="83E-cQ-51y"/>
+                        <outlet property="garageVerMasPropAVisitar" destination="cAo-Qx-B62" id="KaG-8s-e4G"/>
+                        <outlet property="habitacionesVerMasPropAVisitar" destination="C5m-CZ-9dk" id="eW3-yn-Vxd"/>
+                        <outlet property="imgPropVerMAsPropAVisitar" destination="Fz4-fn-wf3" id="60d-Vu-3LM"/>
+                        <outlet property="nombreVerMAsPropAVisitar" destination="f3F-5e-9gV" id="EKM-zu-RCS"/>
+                        <outlet property="precioVerMasPropAVisitar" destination="6WV-cb-dKn" id="Qlo-Lr-kl8"/>
+                        <outlet property="tipoOperVerMasPropAVisitar" destination="puO-uk-PbJ" id="mlv-B2-f7m"/>
+                        <outlet property="tipoPropVerMasPropAVisitar" destination="3K9-xa-t3i" id="sWw-zn-5Ru"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sL-bO-RQd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
