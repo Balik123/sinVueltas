@@ -22,7 +22,7 @@ Tambien ofrecemos la posibilidad de subir tus propios inmubles para que puedas r
 8. En un momento el simulado de Xcode se iniciará con la
 aplicación
 
-**NOTA: Para la realizacion de esta App se uso Xcode 11.3, por lo que se recomienda usar Xcode 11.3 o superior o un dispositivo iOS con iOS 13.1 o superior para poder compilar y usar el generador PPP**
+**NOTA: Para la realizacion de esta App se uso Xcode 11.3, por lo que se recomienda usar Xcode 11.3 o superior o un dispositivo iOS con iOS 13.1 o superior para poder compilar y usar sinVueltas**
 
 
 
