@@ -177,6 +177,7 @@ class misPropiedadesViewController: UIViewController, UITableViewDelegate, UITab
         }else{
             self.validacionCount = true
             self.tableView.reloadData()
+            dismiss(animated: true, completion: nil)
         }
         
     }

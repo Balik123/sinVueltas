@@ -169,7 +169,7 @@ class confirmarCitaViewController: UIViewController {
     
     func verificarRegistro(){
         
-        db.collection("Usuarios").whereField("id_Usuario", isEqualTo: "-8938262307736497869:D0B92A6C-9BF2-460A-922E-A617C1E3A6BC")
+        db.collection("Usuarios").whereField("id_Usuario", isEqualTo: UIDevice.identifier)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")

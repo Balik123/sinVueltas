@@ -29,6 +29,7 @@ class datosUsuarioViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         storageReference = Storage.storage().reference()
         getDatosUsuario()
+        endablebuttonItem()
 
         
     }
@@ -36,9 +37,16 @@ class datosUsuarioViewController: UIViewController, UITableViewDelegate, UITable
      override func viewWillAppear(_ animated: Bool) {
            storageReference = Storage.storage().reference()
            getPropiedades()
-        
-           
+           endablebuttonItem()
        }
+    
+    
+    func endablebuttonItem(){
+        var temp:[String] = []
+        if defaults.array(forKey: "misPropSubidas") == nil{
+            self.defaults.set(temp , forKey: "misPropSubidas")
+        }
+    }
     
 
     /*

@@ -74,9 +74,7 @@ class verMasViewController: UIViewController {
         userImageRef.downloadURL { (url, error) in
         if let error = error{
             print(error.localizedDescription)
-        }else{
-            print("imagen descargada")
-            }
+        }
         }
         
         imgPropVerMAs?.sd_setImage(with: userImageRef)
