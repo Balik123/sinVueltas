@@ -213,6 +213,7 @@ class filtrosViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         if defaults.object(forKey:"filtros") != nil {
             let filtrosAplicados: [filtrosAplicar] = defaults.structArrayData(filtrosAplicar.self, forKey: "filtros")
+            
             habitacionesTextLabel.text = String(filtrosAplicados[0].habitaciones)
             habitacionesStepper.value = Double(filtrosAplicados[0].habitaciones)
             banosTextLabel.text = String(filtrosAplicados[0].banos)

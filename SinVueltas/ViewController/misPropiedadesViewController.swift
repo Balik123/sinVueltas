@@ -126,7 +126,7 @@ class misPropiedadesViewController: UIViewController, UITableViewDelegate, UITab
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "verMasPropAVisitar"{
+        if segue.identifier == "verMasMisPropAVisitar"{
             let indexPath = tableView.indexPathForSelectedRow
             
             let verMasPropAVisitar = segue.destination as? verMasMisPropiedadesViewController

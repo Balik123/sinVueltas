@@ -36,6 +36,8 @@ class listaPropiedadesViewController: UIViewController, UITableViewDelegate, UIT
         storageReference = Storage.storage().reference()
         getPropiedades()
         validarBtn()
+        let filtrosAplicados: [filtrosAplicar] = defaults.structArrayData(filtrosAplicar.self, forKey: "filtros")
+        print(filtrosAplicados)
         
         
 

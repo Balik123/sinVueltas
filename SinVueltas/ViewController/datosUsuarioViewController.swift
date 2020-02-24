@@ -77,9 +77,7 @@ class datosUsuarioViewController: UIViewController, UITableViewDelegate, UITable
            userImageRef.downloadURL { (url, error) in
            if let error = error{
                print(error.localizedDescription)
-           }else{
-               print("imagen descargada")
-               }
+           }
            }
 
 
